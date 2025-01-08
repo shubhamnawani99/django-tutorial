@@ -1,0 +1,16 @@
+{% load static %}   <!-- required to be imported to load static elements -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Django</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- static keyword is used to load static asset -->
+</head>
+<body>
+    <h1>Chai aur Django</h1>
+    <h1><a href="about/">About Us</a></h1>
+    <h1><a href="contact/">Contact Us</a></h1>
+</body>
+</html>
