@@ -74,3 +74,18 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 ```
+
+# Create Apps
+- Create the app with the following command - `python manage.py startapp [app-name]`
+- Add the said app in settings.py
+```python
+INSTALLED_APPS = [
+    ...
+    'Base'
+]
+```
+- Create a new folder for `templates` in `Base` App
+- Inside the templates folder, create another folder with the same name as the project (here Base).
+- Finally create a file called `all_base.html`
+- Create a view
+- Then, copy the contents from urls.py and create a `new urls.py` in the Base folder.
