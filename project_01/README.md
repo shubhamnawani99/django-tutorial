@@ -89,3 +89,43 @@ INSTALLED_APPS = [
 - Finally create a file called `all_base.html`
 - Create a view
 - Then, copy the contents from urls.py and create a `new urls.py` in the Base folder.
+
+# How to use Layouts?
+- Create a new file called `layout.html` in the templates folder under main project
+```html
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        Default Value
+        {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- static keyword is used to load static asset -->
+</head>
+<body>
+    <nav>This is our navbar</nav>
+    {% block content %}{% endblock content %}
+</body>
+</html>
+```
+- Then we can use the `extends` keyword to include the layout
+### `index.html`
+```html
+{% extends "layout.html" %}
+
+{% block title %}
+Chai Aur Django
+{% endblock title %}
+
+{% block content %}
+<h1>Chai aur Django | Homepage</h1>
+    <h1><a href="about/">About Us</a></h1>
+    <h1><a href="contact/">Contact Us</a></h1>
+    <h1><a href="chai/">Chai</a></h1>
+{% endblock content %}
+```
