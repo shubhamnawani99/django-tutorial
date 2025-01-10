@@ -129,3 +129,9 @@ Chai Aur Django
     <h1><a href="chai/">Chai</a></h1>
 {% endblock content %}
 ```
+
+# Migrations and Admin Panel
+- `python manage.py migrate`
+- Create superuser using the following command to use the Admin Panel
+    - `python manage.py createsuperuser`
+    - Set username and password
