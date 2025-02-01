@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}Tweeter - Home{% endblock %}
+{% block content %}
+<h2>
+    {% if form.instance.pk %} 
+    Edit Tweet 
+    {% else %} 
+    Create Tweet 
+    {% endif %}
+
+    <form action="" enctype="multipart/form-data" class="form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-warning" type="Submit">Submit</button>
+    </form>
+    <a href="{% url 'tweet_list' %}">Back to tweet List</a>
+</h2>
+{% endblock %}
